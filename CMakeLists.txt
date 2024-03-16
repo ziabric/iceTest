@@ -34,12 +34,12 @@ set(SOURCES
         ${PROJECT_SOURCE_DIR}/main.cpp
 )
 
-add_executable(${PROJECT_NAME} ${SOURCES} ${IMGUI})
-
 if(WIN32)
+    add_executable(${PROJECT_NAME} WIN32 ${SOURCES} ${IMGUI})
     target_link_libraries(${PROJECT_NAME} PRIVATE sfml-window sfml-network sfml-graphics sfml-system opengl32 websockets)
 endif()
 
 if(UNIX)
+    add_executable(${PROJECT_NAME} ${SOURCES} ${IMGUI})
     target_link_libraries(${PROJECT_NAME} PRIVATE sfml-window sfml-network sfml-graphics sfml-system GL websockets)
 endif()

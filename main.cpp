@@ -106,9 +106,9 @@ void display(ImVec2 size, ClientUDPThread &cl)
 
 int main()
 {
-    ClientUDPThread client(80, {"192.168.0.1"}, SocketDirection::Both);
+    ClientUDPThread client(80, {"192.168.4.1"}, SocketDirection::Both);
 
-    sf::RenderWindow window(sf::VideoMode(1100, 600), "ICE", sf::Style::Titlebar);
+    sf::RenderWindow window(sf::VideoMode(1100, 600), "ICE", sf::Style::Titlebar + sf::Style::Close);
     window.setFramerateLimit(60);
 
     if(ImGui::SFML::Init(window))
